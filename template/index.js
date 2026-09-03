@@ -23,14 +23,15 @@ console.log (" 7 - Exibir playlist")
 console.log (" 8 - Exibir playlist completa")
 console.log (" 0 - Sair")
 
-let opcao = "4";
+let opcao = prompt("Escolha uma opção: ");  
 
 
-if (opcao == "1") {
-    console.log ("Qual músicsa você quer ouvir? Digiet abaixo..");
+if (opcao === "1") {
+    console.log ("Qual músicsa você quer ouvir? Digite abaixo..");
+    let musicapesquisada = prompt("Digite o nome da música: ");
 
-if (playlist.includes("Fear of the Dark")) {
-    console.log ("Música encontrada! Na posição: " + playlist.indexOf("Fear of the Dark"));
+if (playlist.includes(musicapesquisada)) {
+    console.log ("Música encontrada! Na posição: " + playlist.indexOf(musicapesquisada));
 } 
 
 else {
@@ -38,7 +39,7 @@ else {
 }
 }
 
-else if (opcao == "2") { 
+else if (opcao === "2") { 
     console.log ("Informe duas posições da playlist para criar uma nova playlist:")
 
         let posicoes = playlist.slice(1, 4);
@@ -46,18 +47,19 @@ else if (opcao == "2") {
     console.log ("Nova playlist criada: " + posicoes);
 }
 
-else if (opcao == "3") {
+else if (opcao === "3") {
     console.log ("Vamos remover uma música da playlist. Digite a música que deseja remover: ");
 
-        playlist.splice("Breaking the Law", 1);
+        let musicaremovida = prompt("Digite o nome da música: ");
+        playlist.splice(musicaremovida, 1);
     
     console.log ("Playlist atualizada: " + playlist);
 }
 
-else if (opcao == "4") {
+else if (opcao === "4") {
         console.log ("vamos adicionar uma música. Digite o nome da música que deseja adicionar: ");
 
-    let novamusica = "Billie jean";
+    let novamusica = prompt("Digite o nome da música: ");
 
         console.log ("Informe a posição que deseja adicionar a música: ");
 
@@ -66,22 +68,22 @@ else if (opcao == "4") {
         console.log ("Playlist atualizada: " + playlist);
 }
 
-else if (opcao == "5") {
+else if (opcao === "5") {
     console.log ("Playlist em ordem alfabética:");
     console.log (playlist.sort());
 }
 
-else if (opcao == "6") {
+else if (opcao === "6") {
     console.log ("Playlist invertida:");
     console.log (playlist.reverse());
 }
 
-else if (opcao == "7") {
+else if (opcao === "7") {
     console.log ("transformando em string:");
     console.log (playlist.join("|"));
 }
 
-else if (opcao == "8") {
+else if (opcao === "8") {
     console.log ("==== Minha Playlist ====");
     console.log (playlist.join(", "));
 }
@@ -89,4 +91,3 @@ else if (opcao == "8") {
 else {
     console.log ("Você saiu")
 }
-
